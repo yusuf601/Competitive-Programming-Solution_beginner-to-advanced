@@ -1,26 +1,28 @@
 #include <iostream>
 using namespace std;
-
+////https://www.hackerrank.com/challenges/c-tutorial-functions/
 int main() {
-    int angka1, angka2, angka3, angka4, terbesar;
+    int a, b, c, d, terbesar;
 
-    cin >> angka1 >> angka2 >> angka3 >> angka4;
+    // Membaca input
+    cin >> a >> b >> c >> d;
 
-    // Inisialisasi terbesar dengan angka pertama
-    terbesar = angka1;
+    // Inisialisasi terbesar dengan nilai pertama
+    terbesar = a;
 
-    // // Bandingkan dengan angka lainnya dan update terbesar jika perlu
-    // if (angka2 > terbesar) {
-    //     terbesar = angka2;
-    // }
-    // if (angka3 > terbesar) {
-    //     terbesar = angka3;
-    // }
-    // if (angka4 > terbesar) {
-    //     terbesar = angka4;
-    // }
+    // Membandingkan dengan bilangan lainnya dan memperbarui terbesar jika perlu
+    if (b > terbesar) {
+        terbesar = b;
+    }
+    if (c > terbesar) {
+        terbesar = c;
+    }
+    if (d > terbesar) {
+        terbesar = d;
+    }
 
-    cout << "Bilangan terbesar adalah: " << terbesar << endl;
+    // Mencetak hasil
+    cout << terbesar << endl;
 
     return 0;
 }
