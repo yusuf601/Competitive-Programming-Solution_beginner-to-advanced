@@ -5,8 +5,8 @@ using namespace std;
 int main() {
 	string kata1,kata2;
     string jumlah;
-    cin >> kata1;
-    cin >> kata2;
+    getline(cin,kata1);
+    getline(cin,kata2);
     cout << kata1 << endl;
     cout << kata2 << endl;
 
