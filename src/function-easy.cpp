@@ -1,3 +1,4 @@
+#include <tests/function.h>
 #include <iostream>
 using namespace std;
 ////https://www.hackerrank.com/challenges/c-tutorial-functions/

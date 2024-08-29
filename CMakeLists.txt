@@ -7,7 +7,9 @@ project(MyProject)
 # Aktifkan Google Test
 enable_testing()
 include(GoogleTest)
-
+# Tambahkan executable
+add_executable(add_two_numbers src/add_two_numbers.cpp)
+add_executable(function_problem src/function-easy.cpp)
 # Tambahkan executable untuk test
 add_executable(my_tests 
   tests/module1/test_case1.cpp
