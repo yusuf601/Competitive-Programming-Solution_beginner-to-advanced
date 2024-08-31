@@ -37,8 +37,3 @@ Kontribusi sangat diharapkan! Jika Anda memiliki solusi yang lebih baik, perbaik
 
 Repositori ini dilisensikan di bawah [MIT License](LICENSE).
 
-## Kontak
-
-Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk menghubungi saya melalui [email Anda] atau [profil media sosial Anda].
-
-Selamat belajar dan berlatih pemrograman kompetitif!
