@@ -1,0 +1,37 @@
+name: Auto Merge Branches
+
+on:
+  push:
+    branches-ignore:
+      - main  # Gantilah 'main' dengan nama branch default Anda jika berbeda
+  workflow_dispatch: # Ini memungkinkan workflow dijalankan secara manual
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Find the default branch
+        id: default_branch
+        run: echo "DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')" >> $GITHUB_ENV
+
+      - name: Get branch name
+        id: get_branch
+        run: echo "BRANCH_NAME=$(git branch --show-current)" >> $GITHUB_ENV
+
+      - name: Merge to default branch
+        if: env.BRANCH_NAME != env.DEFAULT_BRANCH
+        run: |
+          git checkout $DEFAULT_BRANCH
+          git pull origin $DEFAULT_BRANCH
+          git merge $BRANCH_NAME
+          git push origin $DEFAULT_BRANCH
