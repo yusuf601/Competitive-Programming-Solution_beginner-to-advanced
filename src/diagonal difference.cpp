@@ -12,19 +12,17 @@ vector<string> split(const string &);
  * The function is expected to return an INTEGER.
  * The function accepts 2D_INTEGER_ARRAY arr as parameter.
  */
-
-int diagonalDifference(vector<vector<int>> arr) {
-    int primaryDiagonalSum,secondaryDiagonalSum = 0;
-    int n = arr.size(); // Dapatkan ukuran matriks
+int diagonalDifference(std::vector<std::vector<int>> arr) {
+    int n = arr.size(); 
+    int leftDiagonalSum = 0, rightDiagonalSum = 0;
 
     for (int i = 0; i < n; i++) {
-        primaryDiagonalSum += arr[i][i];       // Diagonal utama: baris dan kolom sama
-        secondaryDiagonalSum += arr[i][n - 1 - i]; // Diagonal sekunder: baris + kolom = n - 1
+        leftDiagonalSum += arr[i][i];
+        rightDiagonalSum += arr[i][n - 1 - i];
     }
 
-    return abs(primaryDiagonalSum - secondaryDiagonalSum); 
+    return abs(leftDiagonalSum - rightDiagonalSum); 
 }
-
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
